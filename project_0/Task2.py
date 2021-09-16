@@ -19,4 +19,19 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
+phones = {}
+def add_to_dict(phone,time):
+    if phone in phones:
+        phones[phone] += time
+    else:
+        phones[phone] = time
+
+for row in calls:
+    add_to_dict(row[0],int(row[-1]))
+    add_to_dict(row[1],int(row[-1]))
+
+phone_max = max(phones,key=phones.get)
+
+print(f'{phone_max} spent the longest time, {phones[phone_max]} seconds, on the phone during September 2016.')
+
 
