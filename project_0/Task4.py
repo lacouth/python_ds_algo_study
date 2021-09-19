@@ -38,4 +38,3 @@ telemarketers = uniques_calls.difference(uniques_texts)
 print('These numbers could be telemarketers: ')
 for phone in sorted(telemarketers):
     print(phone)
-

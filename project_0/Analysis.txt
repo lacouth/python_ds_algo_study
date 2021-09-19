@@ -1,0 +1,16 @@
+In task0, if we do not consider reading the file and creating lists, the complexity for the worst-case scenario should be constant or O(1).
+
+In task1, as we are only adding elements to a collection, the complexity for the worst-case scenario should be linear or O(n).
+
+In task2, I use a dictionary to relate the phone numbers and time, which gives a time complexity linear, O(n). 
+After the insertion, the function max finds the phone number with the largest time, and this process has O(n) time complexity.
+In the end, the total time complexity for the algorithm is O(n^2).
+
+In task3, as I used a set again to avoid repetition, the biggest problem was the sort algorithm. 
+In this case, I opted for the TimSort in sorted(), which has a time complexity of O(n log n).
+
+In task4, the first step is to insert the elements in sets that have O(n) time complexity and 
+after that calculate the difference between the two sets, which also has O(n) time complexity,
+resulting in total time complexity of O(n^2).
+
+
