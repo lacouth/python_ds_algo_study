@@ -18,17 +18,13 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
-uniques = []
+uniques = set()
 for row in texts:
-    if row[0] not in uniques:
-        uniques.append(row[0])
-    if row[1] not in uniques:
-        uniques.append(row[1])
+    uniques.add(row[0])
+    uniques.add(row[1])
 for row in calls:
-    if row[0] not in uniques:
-        uniques.append(row[0])
-    if row[1] not in uniques:
-        uniques.append(row[1])
+    uniques.add(row[0])
+    uniques.add(row[1])
 
 print(f'There are {len(uniques)} different telephone numbers in the records.')
     
