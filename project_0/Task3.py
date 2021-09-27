@@ -47,21 +47,23 @@ The percentage should have 2 decimal digits
  
 codes = set()
 count_local_calls = 0
+total_bagalore_calls = 0
 
 for row in calls:
       if '(080)' in row[0]:
+            total_bagalore_calls += 1
             if '(' in row[1]:
-                  codes.add(int(row[1].replace('(','').split(')')[0]))
+                  codes.add(row[1][ : row[1].find(')') + 1])
                   if '(080)' in row[1]:
                         count_local_calls += 1
             elif int(row[1][0]) >= 7:
-                  codes.add(int(row[1].split()[0]))
+                  codes.add(row[1][:4])
 
 print("The numbers called by people in Bangalore have codes:")
 for code in sorted(codes):
       print(f'{code}')
 
-percentage = count_local_calls / len(calls)
+percentage = count_local_calls / total_bagalore_calls * 100
 
 print(f'{percentage:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
                   

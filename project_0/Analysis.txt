@@ -1,16 +1,33 @@
-In task0, if we do not consider reading the file and creating lists, the complexity for the worst-case scenario should be constant or O(1).
+Task 0
+    * Worse case complexity: O(1)
+    Algorithm:
+        * Access the first and the last rows from lists of calls and texts
 
-In task1, as we are only adding elements to a collection, the complexity for the worst-case scenario should be linear or O(n).
+Task 1
+    * Worse case complexity: O(n)
+    Algorithm:
+        * Sequentially adds elements to a collection
 
-In task2, I use a dictionary to relate the phone numbers and time, which gives a time complexity linear, O(n). 
-After the insertion, the function max finds the phone number with the largest time, and this process has O(n) time complexity.
-In the end, the total time complexity for the algorithm is O(n^2).
+Task 2
+    * Worse case complexity: O(n)
+    Algorithm:
+        I use a dictionary to relate the phone numbers and time, which gives a time complexity linear, O(n). 
+        After the insertion, the function max finds the phone number with the largest time, and this process has O(n) time complexity.
+        In the end, the total time complexity for the algorithm is O(n) + O(n) = O(2n) which in practice is O(n).
 
-In task3, as I used a set again to avoid repetition, the biggest problem was the sort algorithm. 
-In this case, I opted for the TimSort in sorted(), which has a time complexity of O(n log n).
+Task3,
+    * Worse case complexity: O(n log n)
+    Algorithm:
+        I used a for loop to get all the phone numbers in the file and test them if they match de conditions, 
+        put all the matches in a set to avoid repetition, this operation is O(n). To order the numbers I opted the sorted() function,
+        which uses TimSort as sorting algorithm, and has time complexity of O(n log n), in the end O(n) + O(n log n) is O(n log n);
 
-In task4, the first step is to insert the elements in sets that have O(n) time complexity and 
-after that calculate the difference between the two sets, which also has O(n) time complexity,
-resulting in total time complexity of O(n^2).
+Task4,
+    * Worse case complexity: O(n log n) 
+    Algorithm:
+        To avoid repetitions I used three sets to isolate the numbers, the addition operation is O(n), after that I use twice the difference()
+        method to separate the numbers that only appear as callers, the time complexity of this operation is, also, O(n) + O(n) = O(n). To print the remaining
+        numbers in lexicographic order I use the sorted() function that has time complexity of O(n log n), in the end O(n) + O(n log n) is only
+        O(n log n).
 
 
